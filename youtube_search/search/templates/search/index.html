@@ -1,10 +1,10 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Search YouTube</title>
+    <title>Busca YouTube</title>
 
     <!-- Bootstrap core CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,7 +26,7 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
+    <!-- Customização do template -->
     <link href="{% static 'search/album.css' %}" rel="stylesheet">
   </head>
   <body>
@@ -44,13 +44,14 @@
         
       </div>
       <p>
-        <button  type="submit" name="submit" value="search" class="btn btn-primary my-2">Buscar</button>
-        <button  type="submit" name="submit" value="lucky" class="btn btn-secondary my-2">Tive sorte</button>
+        <button  type="submit" name="submit" value="search" class="btn btn-primary my-2">Pesquisar Youtube</button>
+        <button  type="submit" name="submit" value="lucky" class="btn btn-secondary my-2">Estou com sorte</button>
       </p>
     </form>
     </div>
   </section>
 
+<!--Inicio da criação da estrutura dos videos-->
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row">
@@ -59,11 +60,14 @@
           <div class="card mb-4 shadow-sm">
             <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ video.thumbnail }}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
             <div class="card-body">
+              <!--Titulo do video-->
               <p class="card-text">{{ video.title }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
+                  <!--Botão de visualizar o video no youtube-->
                   <a type="button" href="{{ video.url }}" class="btn btn-sm btn-outline-secondary">View</a>
                 </div>
+                <!--Duração do video-->
                 <small class="text-muted">{{ video.duration }} mins</small>
               </div>
             </div>
